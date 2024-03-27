@@ -1,9 +1,23 @@
+class AvengersHeadQuarter
+  attr_accessor :list, :avenger
+
+  def initialize(list = [], avenger = "")
+    @list = list
+    @avenger = avenger
+  end
+
+  def put
+    @list << @avenger
+  end
+end
+
 describe AvengersHeadQuarter do
   it "deve adicionar um vingador" do
-    hq = AvangersHeadQuarter.new
+    hq = AvengersHeadQuarter.new
+    hq.avenger = "SpiderMan"
 
-    hq.put["SpiderMan"]
+    hq.put
 
-    expect(hq).to eql "SpiderMan"
+    expect(hq.list).to include "SpiderMan"
   end
 end
