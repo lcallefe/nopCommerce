@@ -1,38 +1,26 @@
-def login
-  visit "https://opensource-demo.orangehrmlive.com/"
-  fill_in "username", with: "Admin"
-  fill_in "password", with: "admin123"
-  click_button "Login"
-end
-
-#def scroll_down_page
-# page.execute_script("window.scrollTo(0,document.body.scrollHeight/2);")
-# end
-
 describe "Detalhes pessoais" do
-  it "visitar a página" do
+  before(:each) do
     visit "https://opensource-demo.orangehrmlive.com/"
-    expect(page.title).to eql "OrangeHRM"
+    fill_in "username", with: "Admin"
+    fill_in "password", with: "admin123"
+    click_button "Login"
+    click_link "My Info"
   end
 
   it "verificar detalhes pessoais" do
-    login
-    click_link "My Info"
     expect(page).to have_content "Employee Full Name"
     expect(page).to have_content "Marital Status"
     expect(page).to have_content "Nationality"
   end
 
   it "altera dados pessoais", :sample => true do
-    login
-    click_link "My Info"
     # scroll_down_page => não vai precisar agora!
     dropdowns = page.all(".oxd-select-wrapper", count: 3)
     save_buttons = page.all("button[class$=orangehrm-left-space]", count: 2)
 
     # Altera nacionalidade
     dropdowns[0].click
-    find("div[role=option]", text: "Bahamian").click
+    find("div[class=orangehrm-container]", text: "Bahamian").click
 
     # Clica no dropdown de marital status e seleciona 'casado'
     dropdowns[1].click
@@ -57,5 +45,22 @@ describe "Detalhes pessoais" do
     expect(page).to have_content "Married"
     expect(page).to have_content "Bahamian"
     expect(page).to have_content "A+"
+  end
+
+  it "checkbox", :checkbox => true do
+    element = first("span[class^=oxd-checkbox-input]")
+
+    page.scroll_to(element)
+    element.set(true)
+
+    element.checked?
+  end
+
+  it "radio_button", :radio_button => true do
+    element = page.all("span[class^=oxd-radio-input]")[1]
+
+    element.click
+
+    element.selected?
   end
 end
