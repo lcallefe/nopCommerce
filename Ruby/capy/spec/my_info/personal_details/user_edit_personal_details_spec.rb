@@ -63,4 +63,16 @@ describe "Detalhes pessoais" do
 
     element.selected?
   end
+
+  it "attach_file", :attach_file => true do
+    file_path = Dir.pwd + "/spec/my_info/personal_details/fixtures/file.txt"
+
+    # Clica no + Add button
+    find("button[class$='oxd-button--text']").click
+    sleep 20
+    attach_file(file_path, wait: true, make_visible: true)
+    click_button "Save"
+
+    expect(page).to have_content("file.txt")
+  end
 end
