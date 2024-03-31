@@ -17,19 +17,6 @@ Exemplos:
   | "blabla"           | "pwd1234" | "Wrong email"                                                                                            | 
   | ""                 | "pwd123"  | "Please enter your email"                                                                                |
 
-@login_happy
-Cenário: Acesso
-  Quando eu faço login com "luciana@gmail.com" e "pwd123"
-  Então devo ver "Log out" na área logada
-
-Cenário: Usuário nao existe
-  Quando eu faço login com "blabla" e "pwd1234"
-  Então devo ver a mensagem de erro "Wrong email"
-
-@non_ecxiste
-Cenário: Usuário não informado
-  Quando eu faço login com "" e "pwd123"
-  E devo ver a mensagem "Please enter your email"
 
 
 
