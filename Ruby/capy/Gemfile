@@ -4,7 +4,9 @@ source "https://rubygems.org"
 
 # gem "rails"
 
-gem 'capybara'
-gem 'rspec'
-gem 'selenium-webdriver'
-gem 'ffi'
+gem "capybara"
+gem "rspec"
+gem 'selenium-webdriver', '~> 4.19'
+gem "ffi"
+gem "cucumber"
+gem 'webdrivers', '~> 5.0', require: false

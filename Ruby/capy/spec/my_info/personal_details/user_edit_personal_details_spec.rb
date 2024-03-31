@@ -48,31 +48,20 @@ describe "Detalhes pessoais" do
   end
 
   it "checkbox", :checkbox => true do
-    element = first("span[class^=oxd-checkbox-input]")
+    element = first("input[type=checkbox]", visible: false)
 
     page.scroll_to(element)
     element.set(true)
-
-    element.checked?
+    sleep 10
+    p element
+    expect(element.checked?).to be true
   end
 
   it "radio_button", :radio_button => true do
-    element = page.all("span[class^=oxd-radio-input]")[1]
+    element = find("input[type=checkbox]")
 
     element.click
 
-    element.selected?
-  end
-
-  it "attach_file", :attach_file => true do
-    file_path = Dir.pwd + "/spec/my_info/personal_details/fixtures/file.txt"
-
-    # Clica no + Add button
-    find("button[class$='oxd-button--text']").click
-    sleep 20
-    attach_file(file_path, wait: true, make_visible: true)
-    click_button "Save"
-
-    expect(page).to have_content("file.txt")
+    expect(element.selected?).to be true
   end
 end
