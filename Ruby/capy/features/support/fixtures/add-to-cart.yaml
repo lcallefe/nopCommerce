@@ -1,0 +1,32 @@
+produto:
+  calça:
+    nome_do_produto: "Levi"s 511 Jeans"
+    quantidade: 10
+
+  sapato:
+    nome_do_produto: "adidas Consortium Campus 80s Running Shoes"
+    tamanho: 9
+    quantidade: 6
+    cor: "background-color:#363656"
+
+  camiseta:
+    nome_do_produto: "Nike Tailwind Loose Short-Sleeve Running Shirt"
+    tamanho: "3X"
+    quantidade: 5
+
+  camiseta_personalizada:
+    nome_do_produto: "Custom T-Shirt"
+    quantidade: 5
+    texto_personalizado: "I Love Rock N" Roll"
+
+  sapato_personalizado: 
+    nome_do_produto: "Nike Floral Roshe Customized Running Shoes"
+    cor: "White/Blue"
+    tamanho: "9"
+    quantidade: "1"
+    estampa: "https://demo.nopcommerce.com/images/thumbs/0000050_fresh-print_32.jpg"
+
+  bone:
+    nome_do_produto: "Obey Propaganda Hat"
+    tamanho: "Small"
+    quantidade: 999
