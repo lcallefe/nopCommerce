@@ -1,3 +1,4 @@
 Before do
-  @login = LoginPage.new
+  @login_page = LoginPage.new
+  @produto_page = ProdutoPage.new
 end

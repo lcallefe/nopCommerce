@@ -6,6 +6,7 @@ Funcionalidade: Login
   Sendo um usuário previamente cadastrado
   Posso acessar o sistema com meu e-mail e senha
 
+
 @login_hapless
 Esquema do Cenário: Login sem sucesso
   Quando eu faço login com <email> e <senha>

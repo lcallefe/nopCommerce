@@ -13,7 +13,7 @@ Esquema do Cenário: Pedido adicionado ao carrinho com sucesso
   Então devo ver o produto no carrinho de compras
 
   Exemplos:
-    | produto                |
+    | produto                  |
     | "calca"                  |
     | "sapato"                 |
     | "camiseta"               |

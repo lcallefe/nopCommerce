@@ -17,4 +17,8 @@ include Capybara::DSL
     end
     return find(:xpath, "//*[@class[contains(.,'error')]]").text
   end
+
+  def logout 
+    find(".ico-logout").text
+  end
 end

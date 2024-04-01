@@ -1,7 +1,6 @@
 Dado ('que estou na página do {string}') do |codigo_produto|
-  file = YAML.load_file(File.join(Dir.pwd, "features/support/fixtures/add-to-cart.yaml"))
-  p "jskjdklasjdkjaslkjdklajskdjlaksjdklajs"
-  p file
+  @produto_page.go(codigo_produto)
+  sleep 10
 end
 
 
