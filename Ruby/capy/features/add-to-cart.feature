@@ -6,19 +6,20 @@ Funcionalidade: Adicionar produto de vestuário ao carrinho de compras
   Sendo um usuário previamente cadastrado
   Posso adicionar um ou mais produtos ao carrinho de compras
 
-Esquema do cenário: Pedido adicionado ao carrinho com sucesso
+@adiciona_produto
+Esquema do Cenário: Pedido adicionado ao carrinho com sucesso
   Dado que estou na página do <produto>
   Quando adiciono produto ao carrinho
   Então devo ver o produto no carrinho de compras
 
   Exemplos:
-  | produto                  |
-  | "calça"                  |
-  | "sapato"                 |
-  | "camiseta"               |
-  | "camiseta_personalizada" |
-  | "bone"                   |
-  | "sapato_personalizado"   |
+    | produto                |
+    | "calca"                  |
+    | "sapato"                 |
+    | "camiseta"               |
+    | "camiseta_personalizada" |
+    | "bone"                   |
+    | "sapato_personalizado"   |
 
 # WIP
 # Esquema do cenário: Informação faltante
