@@ -15,7 +15,7 @@ describe 'Meu primeiro script' do
     expect(find(class_name)).to have_content 'Bob Tester'
   end
 
-  it 'senha incorreta' do
+  it 'senha incolorreta' do
     visit "https://opensource-demo.orangehrmlive.com/"
     fill_in 'username', with: 'Admin'
     fill_in 'password', with: 'admin'
