@@ -16,7 +16,9 @@ class ApparelItemPage
   
   def set_quantity
     css_quantity = "input[id^=product_enteredQuantity]"
-    find(css_quantity).set(@quantity)
+    quantity_field = find(css_quantity)
+    quantity_field.send_keys :clear
+    quantity_field.set(@quantity)
   end
 
   def set_text
@@ -29,7 +31,6 @@ class ApparelItemPage
     xpath_color = "//div[@class='attributes']//dt/label[contains(text(),'Color')]/parent::*/following-sibling::dd[1]//select"
     if page.has_xpath?(xpath_color)
       xpath_color_option = xpath_color+"/option[text()=\'#{@color}\']"
-      p xpath_color_option
       # não deu certo de setar o select   
       find(:xpath, xpath_color_option).click
     else
@@ -43,18 +44,27 @@ class ApparelItemPage
     find(:xpath, xpath_print).click
   end
 
-  def set_shipping_address 
-    p 'hihihihih'
-    p @shipping_address["zip_code"]
-    shipping_address.click
-    select @shipping_address["country"], from: 'CountryId'
-    select @shipping_address["state"], from: 'StateProvinceId'
-    fill_in 'ZipPostalCode', with: "#{@shipping_address["zip_code"]}"
-    find(:xpath, "//div[contains(text(),\"#{@shipping_address["shipping_method"]}\")]/preceding-sibling::div").click
-    click_button "Apply"
+  def set_shipping_address(shipping_address)
+    p shipping_address.values
+    unless shipping_address.values.all? &:empty?
+      country = shipping_address["country"]
+      state = shipping_address["state"]
+      zip_code = shipping_address["zip_code"]
+      shipping_method = shipping_address["shipping_method"]
+
+      shipping_address_text_area.click
+      select country, from: 'CountryId' unless country.empty?
+      select state, from: 'StateProvinceId' unless state.empty?
+      fill_in 'ZipPostalCode', with: zip_code unless zip_code.empty?
+      unless shipping_method.empty?
+        xpath_radio_button = "//div[contains(text(),\"#{shipping_method}\")]/preceding-sibling::div"
+        find(:xpath, xpath_radio_button).click
+      end
+      click_button "Apply"
+    end
   end
 
-  def shipping_address
+  def shipping_address_text_area
     find('a[id^=open-estimate-shipping-popup]')
   end
 
@@ -62,8 +72,17 @@ class ApparelItemPage
     find('.bar-notification').text
   end
 
+  def alert_message
+    find('.message-failure').text
+  end
+
   def shopping_cart_link
-    find('.ico-cart').text
+    find('.ico-cart')
+  end
+
+  def shopping_cart_dropdown
+    Capybara.ignore_hidden_elements = false 
+    find('.mini-shopping-cart')
   end
 
 
@@ -84,19 +103,14 @@ class ApparelItemPage
     when "custom_text"
       @custom_text = value
       set_text
-    when "shipping_address" 
-      @shipping_address = value
-      set_shipping_address
     end
    end
 
   def create(apparel_item)
     apparel_item.each do |key, value|
-      next if key == "apparel_item_name" || key.nil?
+      next if key == "apparel_item_name" 
       fill_fields(key, value)
-      p key 
-      set_shipping_address if key == shipping_address
     end
-    find("div[class=add-to-cart-panel] button").click
+    find("div[class=add-to-cart-panel] button").click  
   end
 end
