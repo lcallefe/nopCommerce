@@ -1,64 +1,64 @@
 jeans:
-  apparel_item_name: Levis 511 Jeans
+  apparel_item_name: "Levis 511 Jeans"
   quantity: 2
   price: 43.5
 
 running_tshirt:
-  apparel_item_name: Nike Tailwind Loose Short-Sleeve Running Shirt
-  size: 3X
+  apparel_item_name: "Nike Tailwind Loose Short-Sleeve Running Shirt"
+  size: "3X"
   quantity: 2
   price: 15
 
 custom_tshirt:
-  apparel_item_name: Custom T-Shirt
+  apparel_item_name: "Custom T-Shirt"
   quantity: 2
   price: 15
-  custom_text: I Love Rock N Roll
+  custom_text: "I Love Rock N Roll"
 
 oversized_tshirt:
-  apparel_item_name: Oversized Women T-Shirt
+  apparel_item_name: "Oversized Women T-Shirt"
   quantity: 2
   price: 24
    
 cap:
-  apparel_item_name: Obey Propaganda Hat
-  size: Small
+  apparel_item_name: "Obey Propaganda Hat"
+  size: "Small"
   quantity: 2
   price: 30
 
 sunglasses:
-  apparel_item_name: Ray Ban Aviator Sunglasses
+  apparel_item_name: "Ray Ban Aviator Sunglasses"
   quantity: 2
   price: 25
 
 custom_running_shoes: 
-  apparel_item_name: Nike Floral Roshe Customized Running Shoes
-  print: fresh-print
-  color: White/Blue
+  apparel_item_name: "Nike Floral Roshe Customized Running Shoes"
+  print: "fresh-print"
+  color: "White/Blue"
   size: 9
   price: 40
   quantity: 2
 
 common_running_shoes:
-  apparel_item_name: adidas Consortium Campus 80s Running Shoes
+  apparel_item_name: "adidas Consortium Campus 80s Running Shoes"
   size: 9
   quantity: 2
   price: 27.56
   color: "#363656"
 
 medium_mint_shoes:
-  apparel_item_name: Nike SB Zoom Stefan Janoski Medium Mint
+  apparel_item_name: "Nike SB Zoom Stefan Janoski Medium Mint"
   quantity: 2
   price: 30
 
 full_shipping_address:
-  country: United States
+  country: "United States"
   zip_code: "12345"
-  state: Arizona
+  state: "Arizona"
   shipping_method: "Ground"
 
 missing_state_shipping_address:
-  country: Brazil
+  country: "Brazil"
   state: ""
   zip_code: "12345"
   shipping_method: "Next Day Air"
@@ -76,13 +76,13 @@ missing_country_shipping_address:
   shipping_method: ""
 
 missing_zip_code_shipping_address:
-  country: Brazil
+  country: "Brazil"
   zip_code: ""
   state: ""
   shipping_method: ""
 
 missing_shipping_method_shipping_address:
-  country: Brazil
+  country: "Brazil"
   zip_code: "22222"
   state: ""
   shipping_method: ""

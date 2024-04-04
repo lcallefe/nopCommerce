@@ -14,7 +14,6 @@ class ApparelItemPage
   end
 
   def set_size(size)
-    # não deu certo de setar o select   
     find(:xpath, color_or_size(size)).click
   end
   
