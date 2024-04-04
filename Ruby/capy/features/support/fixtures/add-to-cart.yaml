@@ -55,13 +55,13 @@ full_shipping_address:
   country: United States
   zip_code: "12345"
   state: Arizona
-  shipping_method: Ground
+  shipping_method: "Ground"
 
 missing_state_shipping_address:
   country: Brazil
   state: ""
   zip_code: "12345"
-  shipping_method: Next Day Air
+  shipping_method: "Next Day Air"
 
 no_shipping_address:
   country: ""
@@ -76,13 +76,13 @@ missing_country_shipping_address:
   shipping_method: ""
 
 missing_zip_code_shipping_address:
-  country: "Brazil"
+  country: Brazil
   zip_code: ""
   state: ""
   shipping_method: ""
 
 missing_shipping_method_shipping_address:
-  country: "Brazil"
+  country: Brazil
   zip_code: "22222"
   state: ""
   shipping_method: ""

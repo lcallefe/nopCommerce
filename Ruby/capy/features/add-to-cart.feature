@@ -1,6 +1,6 @@
 # language: pt
 # encoding: utf-8
-
+@go_to_product_page
 Funcionalidade: Adicionar item de vestuário ao carrinho de compras
   Para que eu possa efetuar uma compra de um item de vestuário
   Sendo um usuário previamente cadastrado
